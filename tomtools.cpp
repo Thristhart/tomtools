@@ -14,18 +14,22 @@ int promptInt(string prompt) {
 	int input = 0;
 	cout << prompt + " ";
 	cin >> input;
+	// clear the input buffer to fix issues with combining >> and cin
+	cin.ignore();
 	return input;
 }
 double promptDouble(string prompt) { 
 	double input = 0;
 	cout << prompt + " ";
-	cin >> input;
+	cin >> input;	
+	cin.ignore();
 	return input;
 }
 float promptFloat(string prompt) {
 	float input = 0;
 	cout << prompt + " ";
 	cin >> input;
+	cin.ignore();
 	return input;
 }
 string promptString(string prompt) {
