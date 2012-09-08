@@ -13,6 +13,8 @@ then waits for the user to input data and returns it.
 
 > promptDouble(string prompt)
 
+> promptFloat(string prompt)
+
 > promptString(string prompt)
 
 Outputs the string followed by " [yes/no]" and will only accept: yes, y, 1, no, n, 0
