@@ -4,7 +4,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 	string name = promptString("What's your name?");
 	cout << "Hello, " + name + ".\n";
 	int age = promptInt("How old are you?");

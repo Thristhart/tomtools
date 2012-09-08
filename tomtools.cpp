@@ -10,7 +10,8 @@
 #endif
 
 using namespace std;
-int promptInt(string prompt) {
+int promptInt(string prompt)
+{
 	int input = 0;
 	cout << prompt + " ";
 	cin >> input;
@@ -18,27 +19,31 @@ int promptInt(string prompt) {
 	cin.ignore();
 	return input;
 }
-double promptDouble(string prompt) { 
+double promptDouble(string prompt)
+{ 
 	double input = 0;
 	cout << prompt + " ";
 	cin >> input;	
 	cin.ignore();
 	return input;
 }
-float promptFloat(string prompt) {
+float promptFloat(string prompt)
+{
 	float input = 0;
 	cout << prompt + " ";
 	cin >> input;
 	cin.ignore();
 	return input;
 }
-string promptString(string prompt) {
+string promptString(string prompt)
+{
 	string input;
 	cout << prompt + " ";
 	getline(cin, input);
 	return input;
 }
-bool promptYN(string prompt) {
+bool promptYN(string prompt)
+{
 	while(true) {
 		string textIn = promptString(prompt +  " [yes/no]");
 		if(textIn == "y" || textIn == "yes" || textIn == "1")
@@ -49,13 +54,15 @@ bool promptYN(string prompt) {
 	}
 }
 
-void boxBanner(string text, char decoration) {
+void boxBanner(string text, char decoration) 
+{
 	fillLine(decoration);
 	banner(text, decoration);
 	fillLine(decoration);
 }
 
-void banner(string text, char decoration) {
+void banner(string text, char decoration) 
+{
 	int width = termWidth();
 	int bufferSize = width / 2 - 1 - text.length() / 2;
 
@@ -66,7 +73,8 @@ void banner(string text, char decoration) {
 	cout << decoration;
 	cout << endl;
 }
-void center(string text) {
+void center(string text) 
+{
 	int width = termWidth();
 	int length = text.length();
 
@@ -74,19 +82,23 @@ void center(string text) {
 
 	cout << text << endl;
 }
-void space(int count) {
+void space(int count) 
+{
 	repeatChar(' ', count);
 }
-void repeatChar(char fill, int size) {
+void repeatChar(char fill, int size) 
+{
 	for(int i = 0; i < size; i++) {
 		cout << fill;
 	}
 }
-void fillLine(char fill) {
+void fillLine(char fill) 
+{
 	repeatChar(fill, termWidth());
 	cout << endl;
 }
-int termWidth() {
+int termWidth() 
+{
 	#ifdef __linux__
 	// http://www.delorie.com/djgpp/doc/libc/libc_495.html
 	struct winsize w;
