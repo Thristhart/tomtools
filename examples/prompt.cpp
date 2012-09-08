@@ -11,7 +11,7 @@ int main() {
 	double gpa = promptDouble("What's your GPA?");
 	
 	cout << "Your name is " + name + " and you are " << age << " years old, with a GPA of " << gpa << endl;
-	if(promptYN("Is that correct?"))
+	if (promptYN("Is that correct?"))
 		cout << "Yay!" << endl;
 	else
 		cout << "Aw. Are you sure?" << endl;

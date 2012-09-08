@@ -33,9 +33,6 @@ void banner(string output, char decoration);
 // Centered text
 //                      Hello World                     
 void center(string text);
-// the width in characters of the terminal, calculated using platform-specific calls
-// doesn't work on macs
-int termWidth();
 // write <count> number of ' ' to cout
 void space(int count);
 // repeat the given char size times
@@ -43,5 +40,7 @@ void repeatChar(char fill, int size);
 // write a line of the given char
 // ####################################################
 void fillLine(char fill);
-
+// the width in characters of the terminal, calculated using platform-specific calls
+// doesn't work on macs
+int termWidth();
 #endif
