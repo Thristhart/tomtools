@@ -23,23 +23,23 @@ Output
 See tomtools.h for visuals of what these outputs look like.
 
 Centered text, surrounded by the decoration
-boxBanner(string text, char decoration)
+> boxBanner(string text, char decoration)
 
 Centered text, flanked by the decoration
-banner(string text, char decoration)
+> banner(string text, char decoration)
 
 Centered text
-center(string text)
+> center(string text)
 
 Platform-specific functions for determining the width in characters of the terminal.
 Doesn't work on macs.
-termWidth()
+> termWidth()
 
 Write out an amount of spaces equal to count
-space(int count)
+> space(int count)
 
 Repeat the given char a number of times
-repeatChar(char fill, int size)
+> repeatChar(char fill, int size)
 
 Write a line consisting entirely of the given char
-fillLine(char fill);
+> fillLine(char fill);
