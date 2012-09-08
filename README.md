@@ -9,13 +9,14 @@ Prompting
 Use these to get typed data from the user. Outputs the given string, followed by a space,
 then waits for the user to input data and returns it.
 
-promptInt(string prompt)
-promptDouble(string prompt)
-promptString(string prompt)
+> promptInt(string prompt)
+> promptDouble(string prompt)
+> promptString(string prompt)
 
 Outputs the string followed by " [yes/no]" and will only accept: yes, y, 1, no, n, 0
+
 Returns as a bool
-promptYN(string prompt)
+> promptYN(string prompt)
 
 
 Output
