@@ -4,7 +4,7 @@
  * user via command line.
  */
 #include <string>
-using namespace std;
+using std::string;
 
 // include guard
 #ifndef TOMTOOLS_INCLUDED

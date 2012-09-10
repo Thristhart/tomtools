@@ -9,7 +9,12 @@
 	#include <windows.h>
 #endif
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+
+using std::string;
+
 int promptInt(string prompt)
 {
 	int input = 0;
