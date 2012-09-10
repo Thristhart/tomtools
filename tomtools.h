@@ -21,6 +21,8 @@ bool promptYN(string prompt);
 
 // various outputs
 
+// Print the given string to cout followed by endl
+void print(string text);
 // Centered text surrounded by the decoration
 // text: "Hello World" decoration: '#' would look like
 // #####################################################

@@ -27,6 +27,9 @@ Output
 ======
 See tomtools.h for visuals of what these outputs look like.
 
+Simply output the given text to cout followed by endl
+> print(string text)
+
 Centered text, surrounded by the decoration
 > boxBanner(string text, char decoration)
 

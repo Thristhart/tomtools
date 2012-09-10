@@ -54,6 +54,10 @@ bool promptYN(string prompt)
 	}
 }
 
+void print(string text) {
+	cout << text << endl;
+}
+
 void boxBanner(string text, char decoration) 
 {
 	fillLine(decoration);
