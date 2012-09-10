@@ -109,19 +109,20 @@ void fillLine(char fill)
 int termWidth() 
 {
 	#ifdef __linux__
-	// http://www.delorie.com/djgpp/doc/libc/libc_495.html
-	struct winsize w;
-	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-	return w.ws_col;
+		// http://www.delorie.com/djgpp/doc/libc/libc_495.html
+		struct winsize w;
+		ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+		return w.ws_col;
 					
-	#elif defined _WIN32 || _WIN64
-					
-	// http://msdn.microsoft.com/en-us/library/windows/desktop/ms683171%28v=VS.85%29.aspx
-	CONSOLE_SCREEN_BUFFER_INFO csbi;
-	if(!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
-		cerr << "Don't have permission to read the console screen buffer info." << endl;
-	else
-		return csbi.srWindow.Right-csbi.srWindow.Left;
-					
+	#elif defined _WIN32 || _WIN64			
+		// http://msdn.microsoft.com/en-us/library/windows/desktop/ms683171%28v=VS.85%29.aspx
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		if(!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
+			cerr << "Don't have permission to read the console screen buffer info." << endl;
+		else
+			return csbi.srWindow.Right-csbi.srWindow.Left;
+	#else 
+		// just in case we can't figure out what platform we're on, return a reasonable assumption
+		return 80;
 	#endif
 }
