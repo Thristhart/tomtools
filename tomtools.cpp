@@ -15,6 +15,20 @@ using std::endl;
 
 using std::string;
 
+char promptChar(string prompt)
+{
+	cout << prompt + " ";
+	return promptChar();
+}
+char promptChar() 
+{
+	char input = 0;
+	cin >> input;
+	// clear the input buffer to fix issues with combining >> and cin
+	cin.ignore();
+	return input;
+}
+
 int promptInt(string prompt)
 {
 	cout << prompt + " ";
@@ -24,7 +38,6 @@ int promptInt()
 {
 	int input = 0;
 	cin >> input;
-	// clear the input buffer to fix issues with combining >> and cin
 	cin.ignore();
 	return input;
 }
