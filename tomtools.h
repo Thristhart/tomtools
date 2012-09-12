@@ -12,12 +12,18 @@ using std::string;
 
 // various prompting types
 // output the prompt, and input the specific type
+// when passed no arguments, simply gets input with no prompting (allows for custom prompts)
 int promptInt(string prompt);
+int promptInt();
 double promptDouble(string prompt);
+double promptDouble();
 float promptFloat(string prompt);
+float promptFloat();
 string promptString(string prompt);
+string promptString();
 // yes/no questions
 bool promptYN(string prompt);
+bool promptYN();
 
 // various outputs
 
