@@ -9,7 +9,11 @@ Prompting
 Use these to get typed data from the user. Outputs the given string, followed by a space,
 then waits for the user to input data and returns it.
 
+All of these promps can be used with no arguments, and will simply get the user input without any prompt output.
+
 > promptInt(string prompt)
+
+> promptChar(string prompt)
 
 > promptDouble(string prompt)
 
@@ -27,7 +31,7 @@ Output
 ======
 See tomtools.h for visuals of what these outputs look like.
 
-Simply output the given text to cout followed by endl
+Simply output the given text to cout followed by endl (overloaded for outputting float, double, char, int as well)
 > print(string text)
 
 Centered text, surrounded by the decoration
