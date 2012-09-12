@@ -34,7 +34,6 @@ void print(int value);
 void print(char value);
 void print(float value);
 void print(double value);
-void print(bool value);
 // Centered text surrounded by the decoration
 // text: "Hello World" decoration: '#' would look like
 // #####################################################

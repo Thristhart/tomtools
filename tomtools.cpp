@@ -107,10 +107,6 @@ void print(double value)
 {
 	cout << value << endl;
 }
-void print(bool value)
-{
-	cout << value << endl;
-}
 
 void boxBanner(string text, char decoration) 
 {
