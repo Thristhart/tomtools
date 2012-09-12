@@ -23,7 +23,6 @@ string promptString(string prompt);
 string promptString();
 // yes/no questions
 bool promptYN(string prompt);
-bool promptYN();
 
 // various outputs
 

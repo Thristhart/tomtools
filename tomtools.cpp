@@ -17,8 +17,12 @@ using std::string;
 
 int promptInt(string prompt)
 {
-	int input = 0;
 	cout << prompt + " ";
+	return promptInt();
+}
+int promptInt() 
+{
+	int input = 0;
 	cin >> input;
 	// clear the input buffer to fix issues with combining >> and cin
 	cin.ignore();
@@ -26,24 +30,36 @@ int promptInt(string prompt)
 }
 double promptDouble(string prompt)
 { 
-	double input = 0;
 	cout << prompt + " ";
+	return promptDouble();
+}
+double promptDouble() 
+{
+	double input = 0;
 	cin >> input;	
 	cin.ignore();
 	return input;
 }
 float promptFloat(string prompt)
 {
-	float input = 0;
 	cout << prompt + " ";
+	return promptFloat();
+}
+float promptFloat()
+{
+	float input = 0;
 	cin >> input;
 	cin.ignore();
 	return input;
 }
 string promptString(string prompt)
 {
-	string input;
 	cout << prompt + " ";
+	return promptString();
+}
+string promptString()
+{
+	string input;
 	getline(cin, input);
 	return input;
 }
