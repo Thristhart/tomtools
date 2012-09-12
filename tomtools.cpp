@@ -91,6 +91,26 @@ bool promptYN(string prompt)
 void print(string text) {
 	cout << text << endl;
 }
+void print(int value)
+{
+	cout << value << endl;
+}
+void print(char value)
+{
+	cout << value << endl;
+}
+void print(float value)
+{
+	cout << value << endl;
+}
+void print(double value)
+{
+	cout << value << endl;
+}
+void print(bool value)
+{
+	cout << value << endl;
+}
 
 void boxBanner(string text, char decoration) 
 {

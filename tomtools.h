@@ -30,6 +30,11 @@ bool promptYN(string prompt);
 
 // Print the given string to cout followed by endl
 void print(string text);
+void print(int value);
+void print(char value);
+void print(float value);
+void print(double value);
+void print(bool value);
 // Centered text surrounded by the decoration
 // text: "Hello World" decoration: '#' would look like
 // #####################################################
