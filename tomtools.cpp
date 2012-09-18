@@ -15,10 +15,28 @@ using std::endl;
 
 using std::string;
 
+
+
+bool didPromptFail()
+{
+	if(cin.fail())
+       	{
+		cin.clear(); // turn off the 'fail' bit
+		cin.ignore();  // set the input back to a clean slate
+		return true;
+	}
+	else
+		return false;
+}
+
 char promptChar(string prompt)
 {
-	cout << prompt + " ";
-	return promptChar();
+	char input;
+	do {
+		cout << prompt + " ";
+		input = promptChar();
+	} while(didPromptFail());
+	return input;
 }
 char promptChar() 
 {
@@ -31,20 +49,28 @@ char promptChar()
 
 int promptInt(string prompt)
 {
-	cout << prompt + " ";
-	return promptInt();
+	int input;
+	do {
+		cout << prompt + " ";
+		input = promptInt();
+	} while(didPromptFail());
+	return input;
 }
 int promptInt() 
 {
 	int input = 0;
 	cin >> input;
-	cin.ignore();
+	//cin.ignore();
 	return input;
 }
 double promptDouble(string prompt)
 { 
-	cout << prompt + " ";
-	return promptDouble();
+	double input;
+	do {
+		cout << prompt + " ";
+		input = promptDouble();
+	} while(didPromptFail());
+	return input;
 }
 double promptDouble() 
 {
@@ -55,8 +81,12 @@ double promptDouble()
 }
 float promptFloat(string prompt)
 {
-	cout << prompt + " ";
-	return promptFloat();
+	float input;
+	do {
+		cout << prompt + " ";
+		input = promptFloat();
+	} while(didPromptFail());
+	return input;
 }
 float promptFloat()
 {
@@ -67,6 +97,7 @@ float promptFloat()
 }
 string promptString(string prompt)
 {
+	string input;
 	cout << prompt + " ";
 	return promptString();
 }

@@ -10,6 +10,10 @@ using std::string;
 #ifndef TOMTOOLS_INCLUDED
 #define TOMTOOLS_INCLUDED
 
+// Did the last prompt fail? (is cin.fail() valid?)
+// if so, resets the input stream
+bool didPromptFail();
+
 // various prompting types
 // output the prompt, and input the specific type
 // when passed no arguments, simply gets input with no prompting (allows for custom prompts)
