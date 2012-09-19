@@ -26,6 +26,12 @@ Outputs the string followed by " [yes/no]" and will only accept: yes, y, 1, no, 
 Returns as a bool
 > promptYN(string prompt)
 
+Random
+======
+Generates a pseudorandom number between the given ints. (inclusive)
+> randomInt(int minInclusive, int maxInclusive)
+Sets the random seed to the current time (which is random enough for most needs)
+> seedRandom()
 
 Output
 ======
