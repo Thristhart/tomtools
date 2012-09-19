@@ -19,14 +19,12 @@ using std::string;
 
 bool didPromptFail()
 {
-	if(cin.fail())
-       	{
-		cin.clear(); // turn off the 'fail' bit
-		cin.ignore();  // set the input back to a clean slate
-		return true;
-	}
-	else
-		return false;
+	bool didFail = cin.fail();
+	cin.clear(); // turn off the 'fail' bit
+	cin.ignore(64, '\n');  // set the input back to a clean slate - specifically removing the \n that cin leaves in the stream
+	// this will fail if the user input something longer than 64 bits, but that's probably not going to be an issue
+	// probably
+	return didFail;
 }
 
 char promptChar(string prompt)
@@ -42,8 +40,6 @@ char promptChar()
 {
 	char input = 0;
 	cin >> input;
-	// clear the input buffer to fix issues with combining >> and cin
-	cin.ignore();
 	return input;
 }
 
@@ -60,7 +56,6 @@ int promptInt()
 {
 	int input = 0;
 	cin >> input;
-	//cin.ignore();
 	return input;
 }
 double promptDouble(string prompt)
@@ -76,7 +71,6 @@ double promptDouble()
 {
 	double input = 0;
 	cin >> input;	
-	cin.ignore();
 	return input;
 }
 float promptFloat(string prompt)
@@ -92,7 +86,6 @@ float promptFloat()
 {
 	float input = 0;
 	cin >> input;
-	cin.ignore();
 	return input;
 }
 string promptString(string prompt)
