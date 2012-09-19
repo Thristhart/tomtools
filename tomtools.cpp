@@ -126,6 +126,10 @@ int randomInt(int minInclusive, int maxInclusive)
 	// add 1 because it's offset by 1 (n % 3 returns 0..2, we want 1..3)
 	return minInclusive + rand() % (maxInclusive - minInclusive) + 1;
 }
+void seedRandom()
+{
+	srand(time(NULL));
+}
 
 
 void print(int value)

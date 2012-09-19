@@ -32,6 +32,8 @@ bool promptYN(string prompt);
 
 // generate a random number between minInclusive and maxInclusive (inclusive, obviously)
 int randomInt(int minInclusive, int maxInclusive);
+// set the seed to the current time (effectively random enough)
+void seedRandom();
 
 // various outputs
 
