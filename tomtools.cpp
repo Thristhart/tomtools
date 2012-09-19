@@ -1,5 +1,6 @@
 #include "tomtools.h"
 #include <iostream>
+#include <stdlib.h>
 
 // platform-specific stuff needed for termWidth()
 #ifdef __linux__
@@ -14,7 +15,6 @@ using std::cin;
 using std::endl;
 
 using std::string;
-
 
 
 bool didPromptFail()
@@ -119,9 +119,15 @@ bool promptYN(string prompt)
 	}
 }
 
-void print(string text) {
-	cout << text << endl;
+int randomInt(int minInclusive, int maxInclusive)
+{
+	// rand returns any random int
+	// % it to force it into the range
+	// add 1 because it's offset by 1 (n % 3 returns 0..2, we want 1..3)
+	return minInclusive + rand() % (maxInclusive - minInclusive) + 1;
 }
+
+
 void print(int value)
 {
 	cout << value << endl;
@@ -137,6 +143,13 @@ void print(float value)
 void print(double value)
 {
 	cout << value << endl;
+}
+void print(const char* value)
+{
+	cout << value << endl;
+}
+void print(string text) {
+	cout << text << endl;
 }
 
 void boxBanner(string text, char decoration) 

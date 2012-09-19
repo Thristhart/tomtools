@@ -30,14 +30,18 @@ string promptString();
 // yes/no questions
 bool promptYN(string prompt);
 
+// generate a random number between minInclusive and maxInclusive (inclusive, obviously)
+int randomInt(int minInclusive, int maxInclusive);
+
 // various outputs
 
 // Print the given string to cout followed by endl
-void print(string text);
 void print(int value);
 void print(char value);
 void print(float value);
 void print(double value);
+void print(const char* value);
+void print(string text);
 // Centered text surrounded by the decoration
 // text: "Hello World" decoration: '#' would look like
 // #####################################################
