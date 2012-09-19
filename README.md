@@ -9,7 +9,7 @@ Prompting
 Use these to get typed data from the user. Outputs the given string, followed by a space,
 then waits for the user to input data and returns it.
 
-All of these promps can be used with no arguments, and will simply get the user input without any prompt output.
+All of these prompts can be used with no arguments, and will simply get the user input without any prompt output.
 
 > promptInt(string prompt)
 
@@ -29,8 +29,11 @@ Returns as a bool
 Random
 ======
 Generates a pseudorandom number between the given ints. (inclusive)
+
 > randomInt(int minInclusive, int maxInclusive)
+
 Sets the random seed to the current time (which is random enough for most needs)
+
 > seedRandom()
 
 Output
