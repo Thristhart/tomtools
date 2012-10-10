@@ -4,6 +4,12 @@
 
 using namespace std;
 
+using tt::promptString;
+using tt::promptChar;
+using tt::promptInt;
+using tt::promptDouble;
+using tt::promptYN;
+
 int main()
 {
 	string name = promptString("What's your name?");

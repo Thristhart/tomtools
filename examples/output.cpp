@@ -1,5 +1,11 @@
 #include "../tomtools.h"
 
+using tt::print;
+using tt::center;
+using tt::banner;
+using tt::boxBanner;
+using tt::seedRandom;
+using tt::randomInt;
 // for the last example
 #include <cstdio>
 
