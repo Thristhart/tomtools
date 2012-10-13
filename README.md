@@ -6,20 +6,14 @@ Useful tools for simple C++ operations
 Prompting
 =========
 
-Use these to get typed data from the user. Outputs the given string, followed by a space,
+Use these to get typed data from the user.
+
+Simply get the user input without any prompt output.
+> promptBlank(<type> input)
+
+Outputs the given string, followed by a space,
 then waits for the user to input data and returns it.
-
-All of these prompts can be used with no arguments, and will simply get the user input without any prompt output.
-
-> promptInt(string prompt)
-
-> promptChar(string prompt)
-
-> promptDouble(string prompt)
-
-> promptFloat(string prompt)
-
-> promptString(string prompt)
+> prompt(<type> input, string prompt)
 
 Outputs the string followed by " [yes/no]" and will only accept: yes, y, 1, no, n, 0
 
