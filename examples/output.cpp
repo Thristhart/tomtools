@@ -6,6 +6,7 @@ using tt::banner;
 using tt::boxBanner;
 using tt::seedRandom;
 using tt::randomInt;
+using tt::toString;
 // for the last example
 #include <cstdio>
 
@@ -25,20 +26,19 @@ int main() {
 	
 	// random number stuff
 	
-	// if you want more complex outputs, it's best to use sprintf
-	char out[64];
+	// these will always be the same every time because the seed hasn't been set
+	int num1 = randomInt(0, 10);
+	int num2 = randomInt(0, 10);
 
-	// this will always be the same output, every time it's run, because the seed hasn't been set
-	sprintf(out, "Random number #1: %i, #2: %i", randomInt(0, 10), randomInt(20, 30));
-	
-	print(out);
+	print("Random number #1: " + toString(num1) + " , #2: " + toString(num2) );
 
 	seedRandom();
+	num1 = randomInt(0, 10);
+	num2 = randomInt(0, 10);
 
 	// this should be different almost every time
-	sprintf(out, "Random number #1: %i, #2: %i", randomInt(0, 10), randomInt(20, 30));
+	print("Random number #1: " + toString(num1) + " , #2: " + toString(num2) );
 	
-	print(out);
 
 	return 0;
 }

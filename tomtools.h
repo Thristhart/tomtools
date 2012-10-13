@@ -4,7 +4,14 @@
  * user via command line.
  */
 #include <string>
+#include <iostream>
+#include <sstream>
+
 using std::string;
+using std::stringstream;
+using std::cout;
+using std::cin;
+using std::endl;
 
 // include guard
 #ifndef TOMTOOLS_INCLUDED
@@ -18,18 +25,33 @@ namespace tt
 	bool didPromptFail();
 
 	// various prompting types
+	
+	
+	
+	// this is such a dirty hack, but
+	// templates must be defined at the same time that they are
+	// declared, because they are compiled on demand
+	
+	// gets input with no prompting (allows for custom prompts)
+	template <typename T>
+	void promptBlank(T &input)
+	{	
+		cin >> input;
+	}
+
 	// output the prompt, and input the specific type
-	// when passed no arguments, simply gets input with no prompting (allows for custom prompts)
-	char promptChar(string prompt);
-	char promptChar();
-	int promptInt(string prompt);
-	int promptInt();
-	double promptDouble(string prompt);
-	double promptDouble();
-	float promptFloat(string prompt);
-	float promptFloat();
-	string promptString(string prompt);
-	string promptString();
+	template <typename T>
+	void prompt(T &input, string promptText)
+	{
+		T holder;
+		do {
+			cout << promptText + " ";
+			promptBlank(holder);
+		} while(didPromptFail());
+		input = holder;
+	}
+
+
 	// yes/no questions
 	bool promptYN(string prompt);
 
@@ -40,13 +62,22 @@ namespace tt
 
 	// various outputs
 
+	// convert anything to a string
+	template <typename T>
+	string toString(T value) 
+	{
+	        stringstream sstr;
+	        sstr << value;
+	        return sstr.str();
+	}
+
 	// Print the given string to cout followed by endl
-	void print(int value);
-	void print(char value);
-	void print(float value);
-	void print(double value);
-	void print(const char* value);
-	void print(string text);
+	template <typename T>
+	void print(T value)
+	{
+		cout << value << endl;
+	}
+	
 	// Centered text surrounded by the decoration
 	// text: "Hello World" decoration: '#' would look like
 	// #####################################################

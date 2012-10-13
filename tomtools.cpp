@@ -1,6 +1,7 @@
 #include "tomtools.h"
 #include <iostream>
 #include <stdlib.h>
+#include <sstream>
 
 // platform-specific stuff needed for termWidth()
 #ifdef __linux__
@@ -10,11 +11,11 @@
 	#include <windows.h>
 #endif
 
+
 using std::cout;
 using std::cin;
 using std::endl;
 
-using std::string;
 
 
 namespace tt
@@ -29,83 +30,11 @@ namespace tt
 		return didFail;
 	}
 
-	char promptChar(string prompt)
-	{
-		char input;
-		do {
-			cout << prompt + " ";
-			input = promptChar();
-		} while(didPromptFail());
-		return input;
-	}
-	char promptChar() 
-	{
-		char input = 0;
-		cin >> input;
-		return input;
-	}
-
-	int promptInt(string prompt)
-	{
-		int input;
-		do {
-			cout << prompt + " ";
-			input = promptInt();
-		} while(didPromptFail());
-		return input;
-	}
-	int promptInt() 
-	{
-		int input = 0;
-		cin >> input;
-		return input;
-	}
-	double promptDouble(string prompt)
-	{ 
-		double input;
-		do {
-			cout << prompt + " ";
-			input = promptDouble();
-		} while(didPromptFail());
-		return input;
-	}
-	double promptDouble() 
-	{
-		double input = 0;
-		cin >> input;	
-		return input;
-	}
-	float promptFloat(string prompt)
-	{
-		float input;
-		do {
-			cout << prompt + " ";
-			input = promptFloat();
-		} while(didPromptFail());
-		return input;
-	}
-	float promptFloat()
-	{
-		float input = 0;
-		cin >> input;
-		return input;
-	}
-	string promptString(string prompt)
-	{
-		string input;
-		cout << prompt + " ";
-		return promptString();
-	}
-	string promptString()
-	{
-		string input;
-		getline(cin, input);
-		return input;
-	}
-	bool promptYN(string prompt)
+	bool promptYN(string promptText)
 	{
 		while(true) {
-			string textIn = promptString(prompt +  " [yes/no]");
+			string textIn;
+		       	prompt(textIn, promptText +  " [yes/no]");
 			if(textIn == "y" || textIn == "yes" || textIn == "1")
 				return true;
 			if(textIn == "n" || textIn == "no" || textIn == "0")
@@ -124,31 +53,6 @@ namespace tt
 	void seedRandom()
 	{
 		srand(time(NULL));
-	}
-
-
-	void print(int value)
-	{
-		cout << value << endl;
-	}
-	void print(char value)
-	{
-		cout << value << endl;
-	}
-	void print(float value)
-	{
-		cout << value << endl;
-	}
-	void print(double value)
-	{
-		cout << value << endl;
-	}
-	void print(const char* value)
-	{
-		cout << value << endl;
-	}
-	void print(string text) {
-		cout << text << endl;
 	}
 
 	void boxBanner(string text, char decoration) 

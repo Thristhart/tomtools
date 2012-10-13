@@ -4,23 +4,27 @@
 
 using namespace std;
 
-using tt::promptString;
-using tt::promptChar;
-using tt::promptInt;
-using tt::promptDouble;
+using tt::prompt;
 using tt::promptYN;
 
 int main()
 {
-	string name = promptString("What's your name?");
+	string name;
+	char initial;
+	int age;
+	double gpa;
+
+
+       	prompt(name, "What's your name?");
 	cout << "Hello, " + name + ".\n";
-	char initial = promptChar("What's your last initial?");
-	int age = promptInt("How old are you?");
-	double gpa = promptDouble("What's your GPA?");
+	prompt(initial, "What's your last initial?");
+	prompt(age, "How old are you?");
+	prompt(gpa, "What's your GPA?");
 	
 	cout << "Your name is " + name + " " + initial + ". and you are " << age << " years old, with a GPA of " << gpa << endl;
 	if (promptYN("Is that correct?"))
 		cout << "Yay!" << endl;
 	else
 		cout << "Aw. Are you sure?" << endl;
+	return 0;
 }
