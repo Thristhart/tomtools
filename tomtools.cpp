@@ -1,5 +1,6 @@
 #include "tomtools.h"
 #include <iostream>
+#include <limits>
 #include <stdlib.h>
 #include <sstream>
 
@@ -24,12 +25,17 @@ namespace tt
 	{
 		bool didFail = cin.fail();
 		cin.clear(); // turn off the 'fail' bit
-		cin.ignore(64, '\n');  // set the input back to a clean slate - specifically removing the \n that cin leaves in the stream
+		cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n');  // set the input back to a clean slate - specifically removing the \n that cin leaves in the stream
 		// this will fail if the user input something longer than 64 bits, but that's probably not going to be an issue
 		// probably
 		return didFail;
 	}
 
+	void prompt(string &input, string promptText)
+	{
+		cout << promptText + " ";
+		getline(cin, input);
+	}
 	bool promptYN(string promptText)
 	{
 		while(true) {

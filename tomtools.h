@@ -50,6 +50,7 @@ namespace tt
 		} while(didPromptFail());
 		input = holder;
 	}
+	void prompt(string &input, string promptText);
 
 
 	// yes/no questions
